@@ -1,0 +1,53 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: .5rem;
+
+    .user_menu {
+        border-radius: 50%;
+        outline: none;
+        border: none;
+        anchor-name: --profile-button;
+    }
+}
+
+.popover {
+    position: absolute;
+    margin: 0;
+    inset: auto;
+    position-anchor: --profile-button;
+    top: anchor(bottom);
+    right: anchor(right);
+    margin-block-start: var(--primary-spacing);
+    // position-area: end start;
+
+
+    padding: none;
+    background-color: var(--gray-200);
+    color: var(--black);
+    border: .05rem solid var(--gray-600);
+    border-radius: var(--border-radius);
+
+    .menu_item {
+        padding: var(--primary-spacing);
+    }
+
+    button {
+        border: none;
+        background-color: var(--gray-200);
+        padding: var(--primary-spacing);
+        text-align: start;
+        // color: gray;
+        color: var(--gray-600);
+
+        &:hover {
+            background-color: var(--white);
+        }
+    }
+}
+
+.popover:popover-open {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,20 @@
+<header>
+    <p>Bennytha</p>
+    <div>
+        <button class="user_menu" popovertarget="user_menu">
+            <app-user-initials [userName]="userName()" />
+        </button>
+    </div>
+</header>
+
+<div #user_menu class="popover" id="user_menu" popover>
+    <div class="menu_item">
+        {{userName()}}
+    </div>
+    <button (click)="closePopover()">
+        Manage account
+    </button>
+    <button>
+        Logout
+    </button>
+</div>
