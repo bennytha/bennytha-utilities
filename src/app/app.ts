@@ -9,5 +9,5 @@ import { Header } from './common/components/header/header';
   styleUrl: './app.scss'
 })
 export class App {
-  protected title = 'revise_angular';
+  protected title = 'bennytha-utilities';
 }

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "revise_angular": {
+    "bennytha-utilities": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -58,10 +58,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "revise_angular:build:production"
+              "buildTarget": "bennytha-utilities:build:production"
             },
             "development": {
-              "buildTarget": "revise_angular:build:development"
+              "buildTarget": "bennytha-utilities:build:development"
             }
           },
           "defaultConfiguration": "development"
