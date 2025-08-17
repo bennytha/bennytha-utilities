@@ -1,8 +1,13 @@
 .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: var(--primary-spacing);
     font-size: .6rem;
     font-weight: 300;
     border-radius: 50%;
     background-color: var(--gray-600);
     color: var(--white);
+    min-width: 1.4rem;
+    min-height: 1.4rem;
 }

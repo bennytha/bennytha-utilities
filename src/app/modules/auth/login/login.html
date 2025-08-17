@@ -1,0 +1,106 @@
+<section>
+    <div class="login_wrapper">
+        <h3>
+            @if(isLoginFlow()){
+            Sign in
+            }@else {
+            Register
+            }
+        </h3>
+        @if(isLoginFlow()){
+        <form [formGroup]="loginForm" class="vertical_div_with_gap" (ngSubmit)="  onLogin()">
+            <div class="input_group" [class]="{'has-error': getErrorMessage('email')}">
+                <label for="email">
+                    Email
+                </label>
+                <input id="email" type="text" formControlName="email">
+                @if(getErrorMessage('email')){
+                <div class="error_message info_text">
+                    {{ getErrorMessage('email') }}
+                </div>
+                }
+            </div>
+            <div class="input_group" [class]="{'has-error': getErrorMessage('password')}">
+                <label for="password">
+                    Password
+                </label>
+                <input id="password" type="password" formControlName="password">
+                @if(getErrorMessage('password')){
+                <div class="error_message info_text">
+                    {{ getErrorMessage('password') }}
+                </div>
+                }
+            </div>
+            <button type="submit" [disabled]="isLoading()">
+                Login
+            </button>
+        </form>
+        <p class="info_text">Don't have an account?</p>
+        <button (click)="isLoginFlow.set(false)" [disabled]="isLoading()">
+            Register
+        </button>
+        <div class="horizontal_divider"></div>
+        <p class="info_text">Continue with </p>
+        <button (click)="isLoginFlow.set(false)" [disabled]="isLoading()">
+            Google
+        </button>
+        <div class="horizontal_divider"></div>
+        <p class="info_text">Continue as </p>
+        <button (click)="toHome()" [disabled]="isLoading()">
+            Guest
+        </button>
+        }@else {
+        <form [formGroup]="registerForm" class="vertical_div_with_gap" (ngSubmit)="  onRegister()">
+            <div class="input_group" [class]="{'has-error': getErrorMessage('username')}">
+                <label for="username">
+                    Display name
+                </label>
+                <input id="username" type="text" formControlName="username">
+                @if(getErrorMessage('username')){
+                <div class="error_message info_text">
+                    {{ getErrorMessage('username') }}
+                </div>
+                }
+            </div>
+
+            <div class="input_group" [class]="{'has-error': getErrorMessage('email')}">
+                <label for="email">
+                    Email
+                </label>
+                <input id="email" type="text" formControlName="email">
+                @if(getErrorMessage('email')){
+                <div class="error_message info_text">
+                    {{ getErrorMessage('email') }}
+                </div>
+                }
+            </div>
+            <div class="input_group" [class]="{'has-error': getErrorMessage('password')}">
+                <label for="password">
+                    Password
+                </label>
+                <input id="password" type="password" formControlName="password">
+                @if(getErrorMessage('password')){
+                <div class="error_message info_text">
+                    {{ getErrorMessage('password') }}
+                </div>
+                }
+            </div>
+            <button type="submit" [disabled]="isLoading()">
+                Register
+            </button>
+        </form>
+        <div class="horizontal_divider"></div>
+        <p class="info_text">Have an account?</p>
+        <button (click)="isLoginFlow.set(true)">
+            Loign
+        </button>
+
+        }
+        @if(errorMessage() != null){
+        <div class="error_container info_text">
+            <p>{{errorMessage()}}</p>
+        </div>
+        }
+    </div>
+
+</section>

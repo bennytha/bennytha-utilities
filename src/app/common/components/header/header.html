@@ -1,20 +1,32 @@
 <header>
     <p>Bennytha</p>
-    <div>
+    <div class="page_links">
+        <div class="page_links">
+            <a routerLink="/dashboard/home" routerLinkActive="active-link">Home</a>
+            <a routerLink="/dashboard/apps" routerLinkActive="active-link">Apps</a>
+            <a routerLink="/dashboard/blogs" routerLinkActive="active-link">Blogs</a>
+        </div>
+        @if(authSer.currentUserSig()){
         <button class="user_menu" popovertarget="user_menu">
-            <app-user-initials [userName]="userName()" />
+            <app-user-initials
+                [userName]="authSer.currentUserSig()?.username ? authSer.currentUserSig()!.username: ''" />
         </button>
+        }@else {
+        <button class="btn" (click)="login()">
+            Login
+        </button>
+        }
     </div>
 </header>
 
 <div #user_menu class="popover" id="user_menu" popover>
     <div class="menu_item">
-        {{userName()}}
+        {{authSer.currentUserSig()?.username}}
     </div>
     <button (click)="closePopover()">
         Manage account
     </button>
-    <button>
+    <button (click)="logout()">
         Logout
     </button>
 </div>

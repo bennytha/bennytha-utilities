@@ -7,7 +7,7 @@ import { Component, computed, input } from '@angular/core';
   styleUrl: './user-initials.scss'
 })
 export class UserInitials {
-  userName = input.required<string>();
+  userName = input.required<string | ''>();
 
   userNameInitials = computed(() => {
     const name = this.userName() ?? '';

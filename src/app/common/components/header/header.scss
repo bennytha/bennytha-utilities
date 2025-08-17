@@ -1,6 +1,7 @@
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 1rem;
     padding: .5rem;
 
@@ -9,6 +10,12 @@ header {
         outline: none;
         border: none;
         anchor-name: --profile-button;
+    }
+
+    .page_links {
+        display: flex;
+        gap: var(--primary-spacing);
+        align-items: center;
     }
 }
 

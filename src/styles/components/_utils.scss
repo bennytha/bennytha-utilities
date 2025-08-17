@@ -1,0 +1,25 @@
+.horizontal_divider {
+    width: 100%;
+    border: .01rem solid var(--gray-400);
+    margin: var(--primary-spacing) 0rem;
+}
+
+.vertical_divider {
+    height: 100%;
+    border: .01rem solid var(--gray-400);
+    margin: 0rem var(--primary-spacing);
+}
+
+.vertical_div_with_gap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--primary-spacing);
+}
+
+.error_container {
+    width: 100%;
+    padding: var(--primary-spacing);
+    background-color: var(--error-color);
+    border: .01rem solid var(--gray-400);
+    border-radius: var(--border-radius);
+}
