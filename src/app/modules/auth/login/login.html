@@ -41,7 +41,7 @@
         </button>
         <div class="horizontal_divider"></div>
         <p class="info_text">Continue with </p>
-        <button (click)="isLoginFlow.set(false)" [disabled]="isLoading()">
+        <button (click)="onGoogleLogin()" [disabled]="isLoading()">
             Google
         </button>
         <div class="horizontal_divider"></div>
@@ -94,8 +94,14 @@
         <button (click)="isLoginFlow.set(true)">
             Loign
         </button>
-
         }
+
+        @if(isLoading()){
+        <div class="center_content ">
+            <img class="loading_container" src="images/loader.gif" alt="">
+        </div>
+        }
+
         @if(errorMessage() != null){
         <div class="error_container info_text">
             <p>{{errorMessage()}}</p>

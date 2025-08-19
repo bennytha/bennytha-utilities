@@ -1,1 +1,15 @@
-<p>application-home works!</p>
+<h3>Applications</h3>
+<div class="horizontal_divider"></div>
+<div class="card_wrapper">
+    @for(app of apps; track $index){
+    <div class="card">
+        <h4>{{app.title}}</h4>
+        <div class="horizontal_divider"></div>
+        <div class="description">
+            <p>{{app.shortDescription}}</p>
+        </div>
+        <div class="horizontal_divider"></div>
+        <a href="{{app.url}}" target="_blank">{{app.url}}</a>
+    </div>
+    }
+</div>

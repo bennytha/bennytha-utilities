@@ -45,7 +45,7 @@ export class Login {
   }
 
   onRegister() {
-    console.log(this.registerForm);
+    this.errorMessage.set(null);
     if (this.registerForm.invalid) {
       this.registerForm.markAllAsDirty();
       return
@@ -67,7 +67,7 @@ export class Login {
   }
 
   onLogin() {
-    console.log(this.loginForm);
+    this.errorMessage.set(null);
     if (this.loginForm.invalid) {
       this.loginForm.markAllAsDirty();
       return
@@ -88,6 +88,20 @@ export class Login {
     });
   }
 
+  onGoogleLogin() {
+    this.isLoading.set(true);
+    this.errorMessage.set(null);
+    this.authService.googleLogin().subscribe({
+      next: () => {
+        this.isLoading.set(false);
+        this.router.navigate(['/']);
+      },
+      error: (err) => {
+        this.errorMessage.set(err.code);
+        this.isLoading.set(false);
+      }
+    });
+  }
   toHome() {
     this.router.navigate([''])
   }
